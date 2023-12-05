@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
@@ -7,7 +6,6 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 const Login: React.FC = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     phoneNumber: '',
@@ -25,7 +23,7 @@ const Login: React.FC = () => {
       // Saves data to localStrage
       localStorage.setItem('userDetails', JSON.stringify(formData));
       // Redirects to the second page
-      navigate('/home');
+      window.location.href = "/"
     } else {
       alert('Please fill in all the details');
     }
